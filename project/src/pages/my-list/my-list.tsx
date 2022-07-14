@@ -1,6 +1,7 @@
 import PageFooter from '../../components/page-footer/page-footer';
 import Logo from '../../components/logo/logo';
 import UserBlock from '../../components/user-block/user-block';
+import {Link} from 'react-router-dom';
 
 function MyList(): JSX.Element {
   return (
@@ -23,7 +24,7 @@ function MyList(): JSX.Element {
               />
             </div>
             <h3 className="small-film-card__title">
-              <a className="small-film-card__link" href="film-page.html">Fantastic Beasts: The Crimes of Grindelwald</a>
+              <Link to={'/'} className="small-film-card__link">Fantastic Beasts: The Crimes of Grindelwald</Link>
             </h3>
           </article>
 
@@ -32,7 +33,7 @@ function MyList(): JSX.Element {
               <img src="img/bohemian-rhapsody.jpg" alt="Bohemian Rhapsody" width="280" height="175"/>
             </div>
             <h3 className="small-film-card__title">
-              <a className="small-film-card__link" href="film-page.html">Bohemian Rhapsody</a>
+              <Link to={'/'} className="small-film-card__link">Bohemian Rhapsody</Link>
             </h3>
           </article>
 
@@ -41,7 +42,7 @@ function MyList(): JSX.Element {
               <img src="img/macbeth.jpg" alt="Macbeth" width="280" height="175"/>
             </div>
             <h3 className="small-film-card__title">
-              <a className="small-film-card__link" href="film-page.html">Macbeth</a>
+              <Link to={'/'} className="small-film-card__link">Macbeth</Link>
             </h3>
           </article>
 
@@ -50,7 +51,7 @@ function MyList(): JSX.Element {
               <img src="img/aviator.jpg" alt="Aviator" width="280" height="175"/>
             </div>
             <h3 className="small-film-card__title">
-              <a className="small-film-card__link" href="film-page.html">Aviator</a>
+              <Link to={'/'} className="small-film-card__link">Aviator</Link>
             </h3>
           </article>
 
@@ -62,7 +63,7 @@ function MyList(): JSX.Element {
               />
             </div>
             <h3 className="small-film-card__title">
-              <a className="small-film-card__link" href="film-page.html">We need to talk about Kevin</a>
+              <Link to={'/'} className="small-film-card__link">We need to talk about Kevin</Link>
             </h3>
           </article>
 
@@ -71,7 +72,7 @@ function MyList(): JSX.Element {
               <img src="img/what-we-do-in-the-shadows.jpg" alt="What We Do in the Shadows" width="280" height="175"/>
             </div>
             <h3 className="small-film-card__title">
-              <a className="small-film-card__link" href="film-page.html">What We Do in the Shadows</a>
+              <Link to={'/'} className="small-film-card__link">What We Do in the Shadows</Link>
             </h3>
           </article>
 
@@ -80,7 +81,7 @@ function MyList(): JSX.Element {
               <img src="img/revenant.jpg" alt="Revenant" width="280" height="175"/>
             </div>
             <h3 className="small-film-card__title">
-              <a className="small-film-card__link" href="film-page.html">Revenant</a>
+              <Link to={'/'} className="small-film-card__link">Revenant</Link>
             </h3>
           </article>
 
@@ -89,7 +90,7 @@ function MyList(): JSX.Element {
               <img src="img/johnny-english.jpg" alt="Johnny English" width="280" height="175"/>
             </div>
             <h3 className="small-film-card__title">
-              <a className="small-film-card__link" href="film-page.html">Johnny English</a>
+              <Link to={'/'} className="small-film-card__link">Johnny English</Link>
             </h3>
           </article>
 
@@ -99,7 +100,7 @@ function MyList(): JSX.Element {
               <img src="img/shutter-island.jpg" alt="Shutter Island" width="280" height="175"/>
             </div>
             <h3 className="small-film-card__title">
-              <a className="small-film-card__link" href="film-page.html">Shutter Island</a>
+              <Link to={'/'} className="small-film-card__link">Shutter Island</Link>
             </h3>
           </article>
         </div>

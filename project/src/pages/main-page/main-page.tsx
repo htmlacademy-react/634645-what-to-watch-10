@@ -2,6 +2,7 @@ import SmallMovieCard from '../../components/small-movie-card/small-movie-card';
 import UserBlock from '../../components/user-block/user-block';
 import Logo from '../../components/logo/logo';
 import PageFooter from '../../components/page-footer/page-footer';
+import {Link} from 'react-router-dom';
 
 const Movies = [
   {
@@ -172,34 +173,34 @@ function MainPage({promoMovie}: MainScreeProps): JSX.Element {
 
           <ul className="catalog__genres-list">
             <li className="catalog__genres-item catalog__genres-item--active">
-              <a href="#" className="catalog__genres-link">All genres</a>
+              <Link to={'/'} className="catalog__genres-link">All genres</Link>
             </li>
             <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Comedies</a>
+              <Link to={'/'} className="catalog__genres-link">Comedies</Link>
             </li>
             <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Crime</a>
+              <Link to={'/'} className="catalog__genres-link">Crime</Link>
             </li>
             <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Documentary</a>
+              <Link to={'/'} className="catalog__genres-link">Documentary</Link>
             </li>
             <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Dramas</a>
+              <Link to={'/'} className="catalog__genres-link">Dramas</Link>
             </li>
             <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Horror</a>
+              <Link to={'/'} className="catalog__genres-link">Horror</Link>
             </li>
             <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Kids & Family</a>
+              <Link to={'/'} className="catalog__genres-link">Kids & Family</Link>
             </li>
             <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Romance</a>
+              <Link to={'/'} className="catalog__genres-link">Romance</Link>
             </li>
             <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Sci-Fi</a>
+              <Link to={'/'} className="catalog__genres-link">Sci-Fi</Link>
             </li>
             <li className="catalog__genres-item">
-              <a href="#" className="catalog__genres-link">Thrillers</a>
+              <Link to={'/'} className="catalog__genres-link">Thrillers</Link>
             </li>
           </ul>
 
@@ -210,9 +211,10 @@ function MainPage({promoMovie}: MainScreeProps): JSX.Element {
                   (
                     <SmallMovieCard
                       key = {item.id}
-                      moviePosterName ={item.img}
+                      id = {item.id}
+                      moviePosterName = {item.img}
                       movieTitle = {item.title}
-                      className={'catalog__films-card'}
+                      className = {'catalog__films-card'}
                     />
                   )
                 )

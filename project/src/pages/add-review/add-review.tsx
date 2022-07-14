@@ -1,5 +1,6 @@
 import Logo from '../../components/logo/logo';
 import UserBlock from '../../components/user-block/user-block';
+import {Link} from 'react-router-dom';
 
 function AddReview(): JSX.Element {
   return (
@@ -17,10 +18,10 @@ function AddReview(): JSX.Element {
           <nav className="breadcrumbs">
             <ul className="breadcrumbs__list">
               <li className="breadcrumbs__item">
-                <a href="film-page.html" className="breadcrumbs__link">The Grand Budapest Hotel</a>
+                <Link to={'/'} className="breadcrumbs__link">The Grand Budapest Hotel</Link>
               </li>
               <li className="breadcrumbs__item">
-                <a href="#" className="breadcrumbs__link">Add review</a>
+                <Link to={'/'} className="breadcrumbs__link">Add review</Link>
               </li>
             </ul>
           </nav>
