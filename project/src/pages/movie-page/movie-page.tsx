@@ -13,7 +13,7 @@ function MoviePage(): JSX.Element {
           <h1 className="visually-hidden">WTW</h1>
 
           <header className="page-header film-card__head">
-            <Logo toMain />
+            <Logo />
 
             <ul className="user-block">
               <li className="user-block__item">
@@ -155,7 +155,7 @@ function MoviePage(): JSX.Element {
           </div>
         </section>
 
-        <PageFooter toMain />
+        <PageFooter />
       </div>
     </>
   );

@@ -6,7 +6,7 @@ function MyList(): JSX.Element {
   return (
     <div className="user-page">
       <header className="page-header user-page__head">
-        <Logo toMain />
+        <Logo />
 
         <h1 className="page-title user-page__title">My list <span className="user-page__film-count">9</span></h1>
         <UserBlock />
@@ -105,7 +105,7 @@ function MyList(): JSX.Element {
         </div>
       </section>
 
-      <PageFooter toMain />
+      <PageFooter />
     </div>
   );
 }

@@ -6,6 +6,7 @@ import MyList from '../../pages/my-list/my-list';
 import MoviePage from '../../pages/movie-page/movie-page';
 import AddReview from '../../pages/add-review/add-review';
 import Player from '../../pages/player/player';
+import NotFound from '../../pages/not-found/not-found';
 
 const PromoMovie = {
   title: 'The Grand Budapest Hotel',
@@ -43,6 +44,10 @@ function App(): JSX.Element {
           <Route
             path={AppRoute.Player}
             element={<Player />}
+          />
+          <Route
+            path='*'
+            element={<NotFound />}
           />
         </Route>
       </Routes>
