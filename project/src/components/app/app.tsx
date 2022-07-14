@@ -1,4 +1,11 @@
 import MainPage from '../../pages/main-page/main-page';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {AppRoute} from '../../const';
+import SignIn from '../../pages/sign-in/sign-in';
+import MyList from '../../pages/my-list/my-list';
+import MoviePage from '../../pages/movie-page/movie-page';
+import AddReview from '../../pages/add-review/add-review';
+import Player from '../../pages/player/player';
 
 const PromoMovie = {
   title: 'The Grand Budapest Hotel',
@@ -10,7 +17,36 @@ const PromoMovie = {
 
 function App(): JSX.Element {
   return (
-    <MainPage promoMovie={PromoMovie} />
+    <BrowserRouter>
+      <Routes>
+        <Route path={AppRoute.Root}>
+          <Route
+            index
+            element={<MainPage promoMovie={PromoMovie} />}
+          />
+          <Route
+            path={AppRoute.Login}
+            element={<SignIn />}
+          />
+          <Route
+            path={AppRoute.MyList}
+            element={<MyList />}
+          />
+          <Route
+            path={AppRoute.Film}
+            element={<MoviePage />}
+          />
+          <Route
+            path={AppRoute.AddReview}
+            element={<AddReview />}
+          />
+          <Route
+            path={AppRoute.Player}
+            element={<Player />}
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
