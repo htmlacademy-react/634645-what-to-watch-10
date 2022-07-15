@@ -1,5 +1,7 @@
 import PageFooter from '../../components/page-footer/page-footer';
 import Logo from '../../components/logo/logo';
+import UserBlock from '../../components/user-block/user-block';
+import {Link} from 'react-router-dom';
 
 function MoviePage(): JSX.Element {
   return (
@@ -13,18 +15,9 @@ function MoviePage(): JSX.Element {
           <h1 className="visually-hidden">WTW</h1>
 
           <header className="page-header film-card__head">
-            <Logo toMain />
+            <Logo />
 
-            <ul className="user-block">
-              <li className="user-block__item">
-                <div className="user-block__avatar">
-                  <img src="img/avatar.jpg" alt="User avatar" width="63" height="63"/>
-                </div>
-              </li>
-              <li className="user-block__item">
-                <a className="user-block__link">Sign out</a>
-              </li>
-            </ul>
+            <UserBlock />
           </header>
 
           <div className="film-card__wrap">
@@ -49,7 +42,7 @@ function MoviePage(): JSX.Element {
                   <span>My list</span>
                   <span className="film-card__count">9</span>
                 </button>
-                <a href="add-review.html" className="btn film-card__button">Add review</a>
+                <Link to={'/'} className="btn film-card__button">Add review</Link>
               </div>
             </div>
           </div>
@@ -67,13 +60,13 @@ function MoviePage(): JSX.Element {
               <nav className="film-nav film-card__nav">
                 <ul className="film-nav__list">
                   <li className="film-nav__item film-nav__item--active">
-                    <a href="#" className="film-nav__link">Overview</a>
+                    <Link to={'/'} className="film-nav__link">Overview</Link>
                   </li>
                   <li className="film-nav__item">
-                    <a href="#" className="film-nav__link">Details</a>
+                    <Link to={'/'} className="film-nav__link">Details</Link>
                   </li>
                   <li className="film-nav__item">
-                    <a href="#" className="film-nav__link">Reviews</a>
+                    <Link to={'/'} className="film-nav__link">Reviews</Link>
                   </li>
                 </ul>
               </nav>
@@ -120,9 +113,9 @@ function MoviePage(): JSX.Element {
                 />
               </div>
               <h3 className="small-film-card__title">
-                <a className="small-film-card__link" href="film-page.html">Fantastic Beasts: The Crimes of
+                <Link to={'/'} className="small-film-card__link">Fantastic Beasts: The Crimes of
                   Grindelwald
-                </a>
+                </Link>
               </h3>
             </article>
 
@@ -131,7 +124,7 @@ function MoviePage(): JSX.Element {
                 <img src="img/bohemian-rhapsody.jpg" alt="Bohemian Rhapsody" width="280" height="175"/>
               </div>
               <h3 className="small-film-card__title">
-                <a className="small-film-card__link" href="film-page.html">Bohemian Rhapsody</a>
+                <Link to={'/'} className="small-film-card__link">Bohemian Rhapsody</Link>
               </h3>
             </article>
 
@@ -140,7 +133,7 @@ function MoviePage(): JSX.Element {
                 <img src="img/macbeth.jpg" alt="Macbeth" width="280" height="175"/>
               </div>
               <h3 className="small-film-card__title">
-                <a className="small-film-card__link" href="film-page.html">Macbeth</a>
+                <Link to={'/'} className="small-film-card__link">Macbeth</Link>
               </h3>
             </article>
 
@@ -149,13 +142,13 @@ function MoviePage(): JSX.Element {
                 <img src="img/aviator.jpg" alt="Aviator" width="280" height="175"/>
               </div>
               <h3 className="small-film-card__title">
-                <a className="small-film-card__link" href="film-page.html">Aviator</a>
+                <Link to={'/'} className="small-film-card__link">Aviator</Link>
               </h3>
             </article>
           </div>
         </section>
 
-        <PageFooter toMain />
+        <PageFooter />
       </div>
     </>
   );
