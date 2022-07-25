@@ -109,11 +109,11 @@ const Movies = [
 
 type MainScreeProps = {
   promoMovie: {
-    title: string,
-    bg: string,
-    poster: string,
+    name: string,
+    backgroundImage: string,
+    posterImage: string,
     genre: string,
-    releaseYear: number
+    released: number
   }
 }
 
@@ -122,7 +122,7 @@ function MainPage({promoMovie}: MainScreeProps): JSX.Element {
     <>
       <section className="film-card">
         <div className="film-card__bg">
-          <img src={`img/${promoMovie.bg}.jpg`} alt={promoMovie.title}/>
+          <img src={promoMovie.backgroundImage} alt={promoMovie.name}/>
         </div>
 
         <h1 className="visually-hidden">WTW</h1>
@@ -135,16 +135,16 @@ function MainPage({promoMovie}: MainScreeProps): JSX.Element {
         <div className="film-card__wrap">
           <div className="film-card__info">
             <div className="film-card__poster">
-              <img src={`img/${promoMovie.poster}.jpg`} alt={promoMovie.title} width="218"
+              <img src={promoMovie.posterImage} alt={promoMovie.name} width="218"
                 height="327"
               />
             </div>
 
             <div className="film-card__desc">
-              <h2 className="film-card__title">{promoMovie.title}</h2>
+              <h2 className="film-card__title">{promoMovie.name}</h2>
               <p className="film-card__meta">
                 <span className="film-card__genre">{promoMovie.genre}</span>
-                <span className="film-card__year">{promoMovie.releaseYear}</span>
+                <span className="film-card__year">{promoMovie.released}</span>
               </p>
 
               <div className="film-card__buttons">

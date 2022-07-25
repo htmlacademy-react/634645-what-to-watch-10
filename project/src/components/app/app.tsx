@@ -8,23 +8,20 @@ import AddReview from '../../pages/add-review/add-review';
 import Player from '../../pages/player/player';
 import NotFound from '../../pages/not-found/not-found';
 import PrivateRoute from '../private-route/private-route';
+import {Films} from '../../types/film';
 
-const PromoMovie = {
-  title: 'The Grand Budapest Hotel',
-  bg: 'bg-the-grand-budapest-hotel',
-  poster: 'the-grand-budapest-hotel-poster',
-  genre: 'Drama',
-  releaseYear: 2014,
-};
+type AppProps = {
+  films: Films,
+}
 
-function App(): JSX.Element {
+function App({films}: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
         <Route path={AppRoute.Root}>
           <Route
             index
-            element={<MainPage promoMovie={PromoMovie} />}
+            element={<MainPage promoMovie={films[0]} />}
           />
           <Route
             path={AppRoute.Login}
