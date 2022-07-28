@@ -1,9 +1,9 @@
-import SmallMovieCard from '../../components/small-movie-card/small-movie-card';
 import UserBlock from '../../components/user-block/user-block';
 import Logo from '../../components/logo/logo';
 import PageFooter from '../../components/page-footer/page-footer';
 import {Link} from 'react-router-dom';
 import {Films} from '../../types/film';
+import MoviesList from '../../components/movies-list/movies-list';
 
 type MainPageProps = {
   promoMovieId: number,
@@ -100,21 +100,10 @@ function MainPage(props: MainPageProps): JSX.Element {
             </li>
           </ul>
 
-          <div className="catalog__films-list">
-            {
-              [
-                films.map((film) =>
-                  (
-                    <SmallMovieCard
-                      key = {film.id}
-                      film = {film}
-                      className = {'catalog__films-card'}
-                    />
-                  )
-                )
-              ]
-            }
-          </div>
+          <MoviesList
+            films={films}
+            className={'catalog__films-list'}
+          />
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
