@@ -11,7 +11,7 @@ import PrivateRoute from '../private-route/private-route';
 import {Films} from '../../types/film';
 
 type AppProps = {
-  films: Films,
+  films: Films;
 }
 
 function App({films}: AppProps): JSX.Element {
@@ -21,7 +21,12 @@ function App({films}: AppProps): JSX.Element {
         <Route path={AppRoute.Root}>
           <Route
             index
-            element={<MainPage promoMovie={films[0]} />}
+            element={
+              <MainPage
+                promoMovieId={0}
+                films={films}
+              />
+            }
           />
           <Route
             path={AppRoute.Login}

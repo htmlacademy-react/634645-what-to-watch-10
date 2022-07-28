@@ -1,20 +1,22 @@
 import {Link} from 'react-router-dom';
+import {Film} from '../../types/film';
 
 type SmallMovieCardProps = {
-  id: number,
-  moviePosterName: string,
-  movieTitle: string,
-  className: string,
+  film: Film;
+  className: string;
 };
 
-function SmallMovieCard({id, moviePosterName, movieTitle, className}: SmallMovieCardProps): JSX.Element {
+function SmallMovieCard(props: SmallMovieCardProps): JSX.Element {
+  const {film, className} = props;
+  const {id, name, previewImage} = film;
+
   return (
     <article className={`small-film-card ${className}`}>
       <div className="small-film-card__image">
-        <img src={`img/${moviePosterName}.jpg`} alt={movieTitle} width="280" height="175"/>
+        <img src={`${previewImage}`} alt={name} width="280" height="175"/>
       </div>
       <h3 className="small-film-card__title">
-        <Link className="small-film-card__link" to={`/films/${id}`}>{movieTitle}</Link>
+        <Link className="small-film-card__link" to={`/films/${id}`}>{name}</Link>
       </h3>
     </article>
   );
