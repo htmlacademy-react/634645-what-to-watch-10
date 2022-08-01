@@ -1,20 +1,31 @@
 import {Link} from 'react-router-dom';
+import {Film} from '../../types/film';
+import React from 'react';
 
 type SmallMovieCardProps = {
-  id: number,
-  moviePosterName: string,
-  movieTitle: string,
-  className: string,
+  film: Film;
+  setActiveMovieCard: React.Dispatch<React.SetStateAction<number | undefined>>;
+  className: string;
 };
 
-function SmallMovieCard({id, moviePosterName, movieTitle, className}: SmallMovieCardProps): JSX.Element {
+function SmallMovieCard(props: SmallMovieCardProps): JSX.Element {
+  const {film, setActiveMovieCard, className} = props;
+  const {id, name, previewImage} = film;
+
+  const handleMouseEnter = () => {
+    setActiveMovieCard(film.id);
+  };
+
   return (
-    <article className={`small-film-card ${className}`}>
+    <article
+      className={`small-film-card ${className}`}
+      onMouseEnter={handleMouseEnter}
+    >
       <div className="small-film-card__image">
-        <img src={`img/${moviePosterName}.jpg`} alt={movieTitle} width="280" height="175"/>
+        <img src={`${previewImage}`} alt={name} width="280" height="175"/>
       </div>
       <h3 className="small-film-card__title">
-        <Link className="small-film-card__link" to={`/films/${id}`}>{movieTitle}</Link>
+        <Link className="small-film-card__link" to={`/films/${id}`}>{name}</Link>
       </h3>
     </article>
   );

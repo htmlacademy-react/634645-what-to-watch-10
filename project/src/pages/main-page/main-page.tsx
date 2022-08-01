@@ -1,128 +1,24 @@
-import SmallMovieCard from '../../components/small-movie-card/small-movie-card';
 import UserBlock from '../../components/user-block/user-block';
 import Logo from '../../components/logo/logo';
 import PageFooter from '../../components/page-footer/page-footer';
 import {Link} from 'react-router-dom';
+import {Films} from '../../types/film';
+import MoviesList from '../../components/movies-list/movies-list';
 
-const Movies = [
-  {
-    id: 1,
-    img: 'fantastic-beasts-the-crimes-of-grindelwald',
-    title: 'Fantastic Beasts: The Crimes of Grindelwald'
-  },
-  {
-    id: 2,
-    img: 'bohemian-rhapsody',
-    title: 'Bohemian Rhapsody',
-  },
-  {
-    id: 3,
-    img: 'macbeth',
-    title: 'Macbeth',
-  },
-  {
-    id: 4,
-    img: 'aviator',
-    title: 'Aviator',
-  },
-  {
-    id: 5,
-    img: 'we-need-to-talk-about-kevin',
-    title: 'We need to talk about Kevin',
-  },
-  {
-    id: 6,
-    img: 'what-we-do-in-the-shadows',
-    title: 'What We Do in the Shadows',
-  },
-  {
-    id: 7,
-    img: 'revenant',
-    title: 'Revenant',
-  },
-  {
-    id: 8,
-    img: 'johnny-english',
-    title: 'Johnny English',
-  },
-  {
-    id: 9,
-    img: 'shutter-island',
-    title: 'Shutter Island',
-  },
-  {
-    id: 10,
-    img: 'pulp-fiction',
-    title: 'Pulp Fiction',
-  },
-  {
-    id: 11,
-    img: 'no-country-for-old-men',
-    title: 'No Country for Old Men',
-  },
-  {
-    id: 12,
-    img: 'snatch',
-    title: 'Snatch',
-  },
-  {
-    id: 13,
-    img: 'moonrise-kingdom',
-    title: 'Moonrise Kingdom',
-  },
-  {
-    id: 14,
-    img: 'seven-years-in-tibet',
-    title: 'Seven Years in Tibet',
-  },
-  {
-    id: 15,
-    img: 'midnight-special',
-    title: 'Midnight Special',
-  },
-  {
-    id: 16,
-    img: 'war-of-the-worlds',
-    title: 'War of the Worlds',
-  },
-  {
-    id: 17,
-    img: 'dardjeeling-limited',
-    title: 'Dardjeeling Limited',
-  },
-  {
-    id: 18,
-    img: 'orlando',
-    title: 'Orlando',
-  },
-  {
-    id: 19,
-    img: 'mindhunter',
-    title: 'Mindhunter',
-  },
-  {
-    id: 20,
-    img: 'midnight-special',
-    title: 'Midnight Special',
-  }
-];
+type MainPageProps = {
+  promoMovieId: number,
+  films: Films,
+};
 
-type MainScreeProps = {
-  promoMovie: {
-    title: string,
-    bg: string,
-    poster: string,
-    genre: string,
-    releaseYear: number
-  }
-}
+function MainPage(props: MainPageProps): JSX.Element {
+  const {promoMovieId, films} = props;
+  const {name, backgroundImage, posterImage, genre, released} = films[promoMovieId];
 
-function MainPage({promoMovie}: MainScreeProps): JSX.Element {
   return (
     <>
       <section className="film-card">
         <div className="film-card__bg">
-          <img src={`img/${promoMovie.bg}.jpg`} alt={promoMovie.title}/>
+          <img src={backgroundImage} alt={name}/>
         </div>
 
         <h1 className="visually-hidden">WTW</h1>
@@ -135,16 +31,16 @@ function MainPage({promoMovie}: MainScreeProps): JSX.Element {
         <div className="film-card__wrap">
           <div className="film-card__info">
             <div className="film-card__poster">
-              <img src={`img/${promoMovie.poster}.jpg`} alt={promoMovie.title} width="218"
+              <img src={posterImage} alt={name} width="218"
                 height="327"
               />
             </div>
 
             <div className="film-card__desc">
-              <h2 className="film-card__title">{promoMovie.title}</h2>
+              <h2 className="film-card__title">{name}</h2>
               <p className="film-card__meta">
-                <span className="film-card__genre">{promoMovie.genre}</span>
-                <span className="film-card__year">{promoMovie.releaseYear}</span>
+                <span className="film-card__genre">{genre}</span>
+                <span className="film-card__year">{released}</span>
               </p>
 
               <div className="film-card__buttons">
@@ -204,23 +100,10 @@ function MainPage({promoMovie}: MainScreeProps): JSX.Element {
             </li>
           </ul>
 
-          <div className="catalog__films-list">
-            {
-              [
-                Movies.map((item) =>
-                  (
-                    <SmallMovieCard
-                      key = {item.id}
-                      id = {item.id}
-                      moviePosterName = {item.img}
-                      movieTitle = {item.title}
-                      className = {'catalog__films-card'}
-                    />
-                  )
-                )
-              ]
-            }
-          </div>
+          <MoviesList
+            films={films}
+            className={'catalog__films-list'}
+          />
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
