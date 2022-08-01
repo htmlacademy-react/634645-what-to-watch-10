@@ -5,7 +5,7 @@ const ratingValues = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 function AddReviewForm() {
   const [reviewData, setReviewData] = useState({
     rating: 0,
-    'review-text': '',
+    reviewText: '',
   });
 
   const handleChange = (evt: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
@@ -45,7 +45,7 @@ function AddReviewForm() {
         <div className="add-review__text">
           <textarea
             className="add-review__textarea"
-            name="review-text"
+            name="reviewText"
             id="review-text"
             placeholder="Review text"
             onChange={handleChange}
