@@ -1,17 +1,26 @@
 import {Link} from 'react-router-dom';
 import {Film} from '../../types/film';
+import React from 'react';
 
 type SmallMovieCardProps = {
   film: Film;
+  setActiveMovieCard: React.Dispatch<React.SetStateAction<number | undefined>>;
   className: string;
 };
 
 function SmallMovieCard(props: SmallMovieCardProps): JSX.Element {
-  const {film, className} = props;
+  const {film, setActiveMovieCard, className} = props;
   const {id, name, previewImage} = film;
 
+  const handleMouseEnter = () => {
+    setActiveMovieCard(film.id);
+  };
+
   return (
-    <article className={`small-film-card ${className}`}>
+    <article
+      className={`small-film-card ${className}`}
+      onMouseEnter={handleMouseEnter}
+    >
       <div className="small-film-card__image">
         <img src={`${previewImage}`} alt={name} width="280" height="175"/>
       </div>
